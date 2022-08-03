@@ -1,0 +1,41 @@
+## EXPIRES CACHING ##
+# Tarayıcı Ön Belleğini Aktifleştirme Kodu
+<IfModule mod_expires.c>
+ExpiresActive On
+
+# Görsel Dosyaları
+ExpiresByType image/jpeg "access plus 1 year"
+ExpiresByType image/jpg "access plus 1 year"
+ExpiresByType image/gif "access plus 1 year"
+ExpiresByType image/png "access plus 1 year"
+ExpiresByType image/webp "access plus 1 year"
+ExpiresByType image/svg+xml "access plus 1 year"
+ExpiresByType image/x-icon "access plus 1 year"
+
+# Video Dosyaları
+ExpiresByType video/mp4 "access plus 1 year"
+ExpiresByType video/mpeg "access plus 1 year"
+
+# CSS ve JavaScript Dosyaları
+ExpiresByType text/css "access plus 1 month"
+ExpiresByType text/javascript "access plus 1 month"
+ExpiresByType application/javascript "access plus 1 month"
+
+# Diğer Dosya Türleri
+ExpiresByType application/pdf "access plus 1 month"
+ExpiresByType application/x-shockwave-flash "access plus 1 month"
+ExpiresByType text/html "access plus 600 seconds"
+
+# Yazı Tipleri (Fontlar)
+ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
+ExpiresByType application/x-font-ttf "access plus 1 year"
+ExpiresByType application/x-font-opentype "access plus 1 year"
+ExpiresByType application/x-font-woff "access plus 1 year"
+</IfModule>
+
+## EXPIRES CACHING ##
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteRule    ^$    public/    [L]
+    RewriteRule    (.*) public/$1    [L]
+</IfModule>
